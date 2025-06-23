@@ -95,6 +95,7 @@ nllb_langs = {
     "no":"nno_Latn",
     "ne":"npi_Deva",
     "ny":"nya_Latn",
+    "oc":"oci_Latn",
     "om":"gaz_Latn",
     "or":"ory_Orya",
     "pl":"pol_Latn",
