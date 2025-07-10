@@ -116,4 +116,14 @@ def first_char_mismatch(src, tgt):
         return True
     else:
         return src[0] != tgt[0]
-    
+
+def uyghur_sentence_checker(src, tgt, threshold = 0.5):
+    """
+    Removes lines if the target is not a valid Uyghur sentence according to is_uyghur_sentence.
+
+    :param float threshold: Minimum ratio of Uyghur words (default: 0.5)
+    """
+    from uyghur_utils import is_uyghur_sentence
+    is_tgt_uyghur, *_ = is_uyghur_sentence(tgt, threshold)
+    return not is_tgt_uyghur
+
