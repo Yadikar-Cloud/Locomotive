@@ -12,6 +12,6 @@
     ],
     "version": "1.0",
     "sources": [
-        "file://~/Locomotive/filtertest",
+        "opus://GNOME",
     ]   
 }
