@@ -1,0 +1,17 @@
+{
+    "from": {
+        "name": "English",
+        "code": "en"
+    },
+    "to": {
+        "name": "Uyghur",
+        "code": "ug"
+    },
+    "filters": [
+        {"uyghur_sentence_checker": {"threshold": 0.5}}
+    ],
+    "version": "1.0",
+    "sources": [
+        "file://~/Locomotive/filtertest",
+    ]   
+}
