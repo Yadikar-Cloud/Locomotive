@@ -7,11 +7,43 @@
         "name": "Uyghur",
         "code": "ug"
     },
-    "filters": [
-        {"uyghur_sentence_checker": {"threshold": 0.5}}
-    ],
     "version": "1.0",
     "sources": [
-        "opus://GNOME",
-    ]   
+      {
+        "source": "opus://NLLB",
+        "filters": [
+            {"uyghur_sentence_checker": {"threshold": 0.4}}
+        ]        
+      },
+      {
+        "source": "opus://Tanzil"
+      },
+      {
+        "source": "opus://WikiMatrix"
+      },
+      {
+        "source": "opus://XLEnt"
+      },
+      {
+        "source": "opus://Tatoeba"
+      },
+      {
+        "source": "opus://TED2020"
+      },
+      {
+        "source": "opus://wikimedia"
+      },
+      {
+        "source": "opus://QED"
+      },
+      {
+        "source": "opus://GNOME"
+      },
+      {
+        "file://~/Locomotive/dataset/software/"
+      },
+      {
+        "file://~/Locomotive/dataset/subtitle/"
+      }     
+    ]
 }
