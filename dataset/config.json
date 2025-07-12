@@ -40,10 +40,10 @@
         "source": "opus://GNOME"
       },
       {
-        "file://~/Locomotive/dataset/software/"
+        "source": "file:///home/user/Locomotive/dataset/software/"
       },
       {
-        "file://~/Locomotive/dataset/subtitle/"
+        "source": "file:///home/user/Locomotive/dataset/subtitle/"
       }     
     ]
 }
