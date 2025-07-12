@@ -13,6 +13,7 @@ import augmenters as augment_funcs
 from removedup import rdup
 from fastshuffle import file_shuffle_sample
 from io import StringIO
+from tqdm import tqdm
 
 nllb_langs = {
     "af":"afr_Latn",
@@ -320,7 +321,15 @@ def merge_shuffle(sources, out_dir, max_eval_sentences=5000, remove_duplicates=T
             src_it = iter(src_mm.readline, b"")
             tgt_it = iter(tgt_mm.readline, b"")
 
-            for src_line in src_it:
+            # Count total lines for progress bar
+            src_mm.seek(0)
+            total_lines = sum(1 for _ in src_mm)
+            src_mm.seek(0)
+            src_it = iter(src_mm.readline, b"")
+            tgt_mm.seek(0)
+            tgt_it = iter(tgt_mm.readline, b"")
+
+            for src_line in tqdm(src_it, total=total_lines, desc=f"Filtering {os.path.basename(source)}"):
                 #Exit after "stop_at" line if excerpt or top filter on
                 if stop_at is not None and line_no > stop_at:
                     print(f"Finished collecting before line {line_no}")
